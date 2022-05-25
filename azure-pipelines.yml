@@ -1,0 +1,13 @@
+- task: AzureResourceManagerTemplateDeployment@3
+  inputs:
+    deploymentScope: 'Resource Group'
+    azureResourceManagerConnection: 'Suscripción de Visual Studio Enterprise - MPN(30f8fc49-5e1c-4034-acc5-709c7300e987)'
+    subscriptionId: '30f8fc49-5e1c-4034-acc5-709c7300e987'
+    action: 'Create Or Update Resource Group'
+    resourceGroupName: 'cloud-shell-storage-southcentralus'
+    location: 'South Central US'
+    templateLocation: 'Linked artifact'
+    csmFile: 'https://raw.githubusercontent.com/jbolanos1996/att-azure-resources/main/CreateResource/azuredeploy.json'
+    overrideParameters: '-projectName webapps'
+    deploymentMode: 'Incremental'
+    deploymentName: 'DeployPipelineTemplate'
